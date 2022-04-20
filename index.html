@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="Nav&Header.css">
+  <link rel="stylesheet" href="MainContent.css">
+  <link rel="stylesheet" href="Contacto.css">
+  <title>Portafolio Personal</title>
+</head>
+<body>
+  <input type="radio" name="page" id="default" checked><input type="radio" name="page" id="inicio"><input type="radio" name="page" id="proyectos"><input type="radio" name="page" id="contacto">
+  <nav id="navbar">
+    <ul>
+      <li class="InicioOption"><a href="#Prueba"><label for="inicio">Inicio</label></a></li>
+      <li class="ProyectoOption"><a href="#"><label for="proyectos">Proyectos</label></a></li>
+      <li class="ContactoOption"><a href="#"><label for="contacto">Contacto</label></a></li>
+    </ul>
+  </nav>
+  <header id="welcome-section">
+    <div class="SpaceMenu"></div>
+    <div class="ContentHeader">
+      <div class="InvisibleContainer"></div>
+      <div class="ContainerImgHeader">
+        <img src="./img/PruebaFondo.jpg" alt="Stiven Universe">
+        <a href="./img/Currículum.pdf" target="_blank" class="button">Ver CV</a>
+      </div>
+      <div class="ContainerTittleHeader">
+        <p>Hola, Soy David</p>
+        <h1>Un <span>Desarrollador</span> Web</h1>
+        <label for="proyectos" class="button">Ver Proyectos</label>
+      </div>      
+    </div>
+    <div id="Prueba">Prueba</div>
+  </header>
+  <main>
+    <div class="SpaceMenu">
+      <h2>Portafolio</h2>
+    </div>
+    <section id="projects">
+      <article class="project-tile Formulario">
+        <h3>Formulario De Encuesta</h3>
+        <div class="ImgProject">
+          <div class="img"></div>
+        </div>
+        <p class="Description">Formulario De How I Met Your Mother, Pero Sin Validacion De Respuestas.</p>
+        <a href="https://cursosdesarrollo.github.io/FormularioEncuesta/" target="_blank" class="button">Ver Pagina</a>
+      </article>
+      <article class="project-tile Producto">
+        <h3>Aterrizaje Del Producto</h3>
+        <div class="ImgProject">
+          <div class="img"></div>
+        </div>
+        <p class="Description">Pagina Web Para Publicitar Y Promocionar Un Producto De IPTV Llamado MiTv+.</p>
+        <a href="https://cursosdesarrollo.github.io/AterrizajeProducto/" target="_blank" class="button">Ver Pagina</a>
+      </article>
+      <article class="project-tile Documentacion">
+        <h3>Documentacion Tecnica</h3>
+        <div class="ImgProject">
+          <div class="img"></div>
+        </div>
+        <p class="Description">Documentacion Tecnica De React, Express, JavaScript, Html Y Css.</p>
+        <a href="https://cursosdesarrollo.github.io/DocumentacionTecnica/" target="_blank" class="button">Ver Pagina</a>
+      </article>
+    </section>
+  </main>
+  <footer>
+    <div class="ContainerContact">
+      <h2>Contacto</h2>
+      <div class="Directions">
+        <img src="./img/PersonSvg.svg" alt="person">
+        <h3>Si Deseas Contactarme Puedes Hacerlo Mediante: </h3>
+        <address>
+          <a href="https://github.com/CursosDesarrollo" target="_blank" id="profile-link"><img src="./img/GithubSvg.svg" alt="Github"></a>
+          <a href="https://www.linkedin.com/in/DavidPaez-73591a231" target="_blank"><img src="./img/LinkedinSvg.svg" alt="Linkedin"></a>
+          <a href="mailto:david.paezg@campusucc.edu.co" target="_blank"><img src="./img/CorreoSvg.svg" alt="Correo"></a>
+        </address>
+      </div>
+    </div>
+  </footer>
+  <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</body>
+</html>

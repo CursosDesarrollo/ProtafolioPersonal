@@ -1,0 +1,167 @@
+#proyectos:checked~main {
+  overflow: initial;
+  overflow-y: auto;
+}
+
+main {
+  max-height: 100vh;
+  display: grid;
+  grid-template-rows: 218.66px 1fr;
+}
+
+main .SpaceMenu {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: end center;
+  height: 100%;
+  background-image: url('./img/FondoHeader.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+main .SpaceMenu::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.14);
+}
+
+main .SpaceMenu h2 {
+  position: relative;
+  z-index: 3;
+  color: white;
+  font-size: 4rem;
+  margin-bottom: 10px;
+}
+
+#projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(394px,1fr));
+  grid-auto-rows: max-content;
+  justify-items: center;
+  gap: 20px;
+  padding: 15px 10px;
+  box-sizing: border-box;
+}
+
+.project-tile {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  max-width: 430px;
+  padding: 10px 0;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 20px;
+}
+
+.project-tile h3 {
+  color: var(--ColorTittleProject);
+  font-size: 1.5rem;
+  width: 85%;
+  text-align: end;
+}
+
+.project-tile .ImgProject {
+  display: grid;
+  place-items: center;
+  margin: auto;
+  width: 90%;
+  padding: 8% 0;
+  border-radius: 20px;
+  background-color: #8276f4;
+  overflow: hidden;
+  max-height: 228px;
+  box-sizing: border-box;
+}
+
+.project-tile .ImgProject .img{
+  width: 90%;
+  padding-top: 70%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 30px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.Formulario .img {
+  background-image: url('./img/FormularioProject.jpg');
+  transform: translateY(-10%) rotate(20deg);
+}
+
+.Producto .img {
+  background-image: url('./img/ProductoProject.jpg');
+  transform: translateY(-10%) rotate(-20deg);
+}
+
+.Documentacion .img {
+  background-image: url('./img/DocumentacionProject.jpg');
+  transform: translateY(-10%) rotate(20deg);
+}
+
+.project-tile p {
+  color: var(--ColorDescriptionProject);
+  width: 80%;
+  text-align: justify;
+}
+
+.project-tile .button:hover {
+  transform: scale(1.1);
+  background-color: var(--HoverButton);
+}
+
+.project-tile .button::after {
+  background-image: url('./img/ViewSvg.svg');
+}
+
+@media (max-width: 499px) { 
+  #projects {
+    grid-template-columns: 90%;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 1300px) {
+  #projects {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .project-tile {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr auto;
+    flex-direction: initial;
+    align-items: initial;
+    gap: 10px;
+    padding: 10px;
+    max-width: initial;
+  }
+
+  .project-tile .ImgProject {
+    grid-column: 1/2;
+    grid-row: 1/4;
+    width: 345px;
+    padding: initial;
+    height: 218px;
+    max-height: initial;
+    box-sizing: border-box;
+  }
+
+  .project-tile p {
+    font-size: 1.2rem;
+    place-self: center center;
+    width: initial;
+  }
+
+  .project-tile h3 {
+    width: initial;
+    justify-self: end;
+  }
+
+  .project-tile .button {
+    justify-self: center;
+  }
+}

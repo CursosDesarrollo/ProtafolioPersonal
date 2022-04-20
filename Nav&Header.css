@@ -1,0 +1,316 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Display&display=swap');
+
+#fcc_test_suite_wrapper {
+  display: none;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --ButtonColor: #6932d5;
+  --HoverButton : #5d22d1;
+  --ColorTittleProject : rgb(58, 57, 94);
+  --ColorDescriptionProject: rgb(92 85 107);
+}
+
+body {
+  font-family: 'Noto Sans Display', sans-serif;
+}
+
+body::-webkit-scrollbar {
+  display: none;             
+}
+
+#default:checked~header #Prueba, #inicio:checked~header #Prueba{
+  position: absolute;
+  bottom: -0.5px;
+  height: 0.5px;
+  overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#default,#inicio,#proyectos,#contacto {
+  display: none;
+}
+
+main,header,footer {
+  height: 0;
+  width: 0;
+  overflow: hidden;
+}
+
+#default:checked~header, #inicio:checked~header,#proyectos:checked~main,#contacto:checked~footer{
+  box-sizing: border-box;
+  height: initial;
+  min-height: 100vh;
+  width: 100%;
+}
+
+#inicio:checked~header,#proyectos:checked~main,#contacto:checked~footer{ 
+  animation: slide-in-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+#default:checked~nav .InicioOption, #inicio:checked~nav .InicioOption, #proyectos:checked~nav .ProyectoOption,#contacto:checked~nav .ContactoOption{
+  box-shadow: rgba(255, 255, 255, 0.712) 0px 5px 15px;
+}
+
+#default:checked~nav .InicioOption label::before,#inicio:checked~nav .InicioOption label::before {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 30px;
+  background-image: url('./img/HomeSvg.svg');
+  background-position: center;
+  background-size: cover;
+  margin: auto;
+}
+
+#proyectos:checked~nav .ProyectoOption label::before{
+  content: "";
+  display: block;
+  width: 30px;
+  height: 30px;
+  background-image: url('./img/ProyectoSvg.svg');
+  background-position: center;
+  background-size: cover;
+  margin: auto;
+}
+
+#contacto:checked~nav .ContactoOption label::before{
+  content: "";
+  display: block;
+  width: 30px;
+  height: 30px;
+  background-image: url('./img/ContactoSvg.svg');
+  background-position: center;
+  background-size: cover;
+  margin: auto;
+}
+
+#default:checked~nav .ProyectoOption label:hover, #inicio:checked~nav .ProyectoOption label:hover,#default:checked~nav .ContactoOption label:hover, #inicio:checked~nav .ContactoOption label:hover,
+#proyectos:checked~nav .InicioOption label:hover, #proyectos:checked~nav .ContactoOption label:hover,
+#contacto:checked~nav .InicioOption label:hover, #contacto:checked~nav .ProyectoOption label:hover{
+  padding: 15px 5px;
+  cursor: pointer;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 10;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  max-width: 500px;
+  margin: auto;
+}
+
+nav ul li {
+  height: max-content;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 600;
+  background-color: #725cd7;
+  border-radius: 0 0 8px 8px;
+  box-shadow: -3px 3px 5px 0px rgb(0 0 0 / 75%);
+  overflow: hidden;
+}
+
+nav a {
+  display: inline-block;
+}
+
+nav label {
+  max-height: max-content;
+  padding: 10px 5px;
+  display: inline-block;
+  transition: padding 0.5s;
+}
+
+.SpaceMenu {
+  height: 47px;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  background-image: url('./img/FondoHeader.jpg');
+  background-position: center;
+  background-size: cover;
+  color: white;
+}
+
+.ContentHeader {
+  display: grid;
+  grid-template-rows: 1.3fr 1fr;
+  flex-grow: 1;
+  position: relative;
+  z-index: 1;
+}
+
+.ContentHeader::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  padding-top: 200%;
+  top: 40%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background-color: white;
+  z-index: 2;
+}
+
+.ContainerImgHeader {
+  position: absolute;
+  z-index: 4;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.ContainerImgHeader::before {
+  content: "";
+  position: absolute;
+  opacity: 0;
+  inset: -8px -8px -4px;
+  border: 3px solid rgba(65, 145, 236);
+  border-radius: 50%;
+  animation: color-border 1s 1s linear infinite alternate forwards;
+}
+
+.ContainerImgHeader::after {
+  content: "";
+  position: absolute;
+  opacity: 0;
+  inset: -15px -15px -11px;
+  border: 3px solid rgba(65, 145, 236);
+  border-radius: 50%;
+  animation: color-border2 1s 2s linear infinite alternate forwards;
+}
+
+.ContainerImgHeader img{
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  animation: img-animation 1s linear infinite alternate forwards;
+}
+
+.button {
+  background-color: var(--ButtonColor);
+  padding: 10px 5px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: white;
+  display: flex;
+  gap: 10px;
+  width: max-content;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.button::after {
+  content: "";
+  width: 30px;
+  height: 30px;
+  background-position: center;
+  background-size: cover;
+}
+
+.ContainerImgHeader .button{
+  position: absolute;
+  z-index: 5;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.ContainerImgHeader .button::after {
+  background-image: url('./img/CvSvg.svg');
+}
+
+.ContainerImgHeader .button:hover{
+  transform: translateX(-50%) scale(1.1);
+  background-color: var(--HoverButton);
+}
+
+.ContainerTittleHeader {
+  color: black;
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.ContainerTittleHeader h1 {
+  text-align: center;
+  font-size: 2.3rem;
+}
+
+.ContainerTittleHeader h1 span{
+  color: var(--ButtonColor);
+}
+
+.ContainerTittleHeader .button::after {
+  background-image: url('./img/ProyectoSvg.svg');
+}
+
+.ContainerTittleHeader .button:hover {
+  transform: scale(1.1);
+  background-color: var(--HoverButton);
+}
+
+@keyframes slide-in-top {
+  0% {
+    transform: translateY(-1000px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes color-border {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes color-border2 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+
+@keyframes img-animation {
+  0% {
+    transform: scale(1.03);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
